@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "scroll-anywhere-mobile",
+  "version": "0.0.1",
+  "description": "scrollbar into your browser",
+  "permission": ["scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["scroll/index.css"],
+      "js": ["scroll/index.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

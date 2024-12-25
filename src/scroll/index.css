@@ -1,0 +1,11 @@
+:root {
+  scrollbar-width: none;
+}
+
+body > .scroll-box {
+  height: 100dvh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  
+}
