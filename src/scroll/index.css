@@ -2,10 +2,15 @@
   scrollbar-width: none;
 }
 
-body > .scroll-box {
+body > .scrollbar-area {
   height: 100dvh;
   position: fixed;
   left: 0px;
   top: 0px;
-  
+  pointer-events: none;
+
+  .scrollbar-touch {
+    transform: translateY(0px);
+    pointer-events: auto;
+  }
 }

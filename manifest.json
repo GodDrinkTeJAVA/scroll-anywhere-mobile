@@ -1,5 +1,6 @@
 {
-  "manifest_version": 3,
+  "{{chrome}}.manifest_version": 3,
+  "{{firefox}}.manifest_version": 2,
   "name": "scroll-anywhere-mobile",
   "version": "0.0.1",
   "description": "scrollbar into your browser",
@@ -7,8 +8,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["scroll/index.css"],
-      "js": ["scroll/index.js"],
+      "css": ["src/scroll/index.css"],
+      "js": ["src/scroll/index.ts"],
       "run_at": "document_start"
     }
   ]

@@ -1,0 +1,19 @@
+{
+  "name": "scr_any",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite dev",
+    "build:dev": "vite build",
+    "build:prod": "vite build"
+  },
+  "keywords": [],
+  "author": "TeJAVA",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6",
+    "vite-plugin-web-extension": "^4.4.0"
+  },
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+}
