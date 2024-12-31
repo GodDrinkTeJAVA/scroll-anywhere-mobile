@@ -2,6 +2,7 @@ import ScrollbarArea from "./scrollbar-area.ts";
 
 const init = () => {
   const body = document.body;
+  console.log(body)
 
   if (!body) {
     return;

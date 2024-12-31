@@ -3,14 +3,19 @@
 }
 
 body > .scrollbar-area {
+  z-index: 10000;
   height: 100dvh;
+  width: 300px;
   position: fixed;
   left: 0px;
   top: 0px;
   pointer-events: none;
 
   .scrollbar-touch {
+    background-color: black;
     transform: translateY(0px);
     pointer-events: auto;
+    width: 100%;
+    height: 100px;
   }
 }

@@ -2,10 +2,11 @@ export default class ScrollbarTouch {
   private scrollbarTouchElement: HTMLDivElement;
   constructor() {
     this.scrollbarTouchElement = document.createElement("div");
+    this.scrollbarTouchElement.className = "scrollbar-touch";
     this.scrollbarTouchElement.addEventListener("touchstart", () => {
       this.scrollbarTouchElement.addEventListener(
         "touchmove",
-        this.touchMoveHandler
+        this.touchMoveHandler.bind(this)
       );
     });
     this.scrollbarTouchElement.addEventListener("touchend", () => {
@@ -18,6 +19,8 @@ export default class ScrollbarTouch {
 
   private moveByPixel(newHeight: number) {
     this.scrollbarTouchElement.style.transform = `translateY(${newHeight}px)`;
+    document.body.scrollTop = 900;
+    console.log(document.body.scrollTop)
   }
 
   private touchMoveHandler(event: TouchEvent) {
@@ -27,5 +30,9 @@ export default class ScrollbarTouch {
 
   public move(newHeight: number) {
     this.moveByPixel(newHeight);
+  }
+
+  get element() {
+    return this.scrollbarTouchElement;
   }
 }
