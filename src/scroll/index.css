@@ -3,14 +3,17 @@
 }
 
 body > .scrollbar-area {
-  height: 100dvh;
+  z-index: 10000;
   position: fixed;
   left: 0px;
   top: 0px;
   pointer-events: none;
 
   .scrollbar-touch {
+    all: unset;
     transform: translateY(0px);
     pointer-events: auto;
+    width: 100%;
+    touch-action: pan-x pinch-zoom;
   }
 }

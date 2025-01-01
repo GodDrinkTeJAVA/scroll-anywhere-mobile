@@ -7,6 +7,7 @@ export default class ScrollbarArea {
     this.scrollbarTouch = new ScrollbarTouch();
     this.scrollbarAreaElement = document.createElement("div");
     this.scrollbarAreaElement.className = "scrollbar-area";
+    this.scrollbarAreaElement.appendChild(this.scrollbarTouch.element);
   }
 
   get element() {
