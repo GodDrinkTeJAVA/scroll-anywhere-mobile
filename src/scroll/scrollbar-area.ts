@@ -3,13 +3,14 @@ import ScrollbarTouch from "./scrollbar-touch.ts";
 export default class ScrollbarArea {
   private scrollbarAreaElement: HTMLDivElement;
   private scrollbarTouch: ScrollbarTouch | undefined;
+
   constructor() {
     this.scrollbarAreaElement = document.createElement("div");
     this.scrollbarAreaElement.className = "scrollbar-area";
     const boundHandleScroll = this.handleScroll.bind(this);
     const boundHandleScrollEnd = this.handleScrollEnd.bind(this);
     document.addEventListener("scroll", boundHandleScroll);
-    // document.addEventListener('scrollend', boundHandleScrollEnd);
+    document.addEventListener('scrollend', boundHandleScrollEnd);
   }
 
   get element() {
@@ -27,7 +28,12 @@ export default class ScrollbarArea {
   }
 
   private handleScrollEnd() {
-    this.scrollbarTouch?.destroy();
-    this.scrollbarTouch = undefined;
+    setTimeout(() => {
+      if (!this.scrollbarTouch || !this.scrollbarTouch.canDeleteTouchArea()) {
+        return;
+      }
+      this.scrollbarTouch.destroy();
+      this.scrollbarTouch = undefined;
+    }, 3000);
   }
 }
